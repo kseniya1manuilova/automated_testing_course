@@ -43,7 +43,7 @@ public class Main {
 
         System.out.println(userCity.equals(expectedCityName));
 
-        System.out.printf("Your have entered: %s", userCity);
+        System.out.println("Your have entered: " + userCity);
 
         int stringLenght = userCity.length();
         boolean cityNameFilledIn = userCity.isEmpty();
@@ -90,6 +90,5 @@ public class Main {
         System.out.println(loweCaseDefaultCityName);
 
         System.out.println(userFirstNameAndYob);
-
         }
     }
