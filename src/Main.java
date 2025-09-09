@@ -2,37 +2,51 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+//        homework1Task1();
+//        homework1Task2();
+//        homework1Task3();
+    }
 
-      String firstName = "Kseniya";
-      String lastName = "Manuilava";
-      String jobTitle = "QA engeneer";
+    public static void myFirstProgram() {
+        System.out.println("Hello world!");
+    }
 
-      System.out.println(firstName +" " + lastName + " works as a " + jobTitle + ".");
 
-      byte age = 31;
-      short yearOfBirth = 1994;
-      int phoneNumber = 291111111;
-      double BodyTemperature = 36.6;
+    public static void homework1Task1() {
+        String firstName = "Kseniya";
+        String lastName = "Manuilava";
+        String jobTitle = "QA engeneer";
 
-      float height;
-      height = 1.7F;
+        System.out.println(firstName + " " + lastName + " works as a " + jobTitle + ".");
+    }
 
-      boolean newMember;
-      newMember = true;
+    public static void homework1Task2() {
+        byte age = 31;
+        short yearOfBirth = 1994;
+        int phoneNumber = 291111111;
+        double BodyTemperature = 36.6;
 
-      char gender;
-      gender = 'F';
+        float height;
+        height = 1.7F;
 
-      String shortSummary = "My age is %d, I was born in %d and my phone number is %d.";
+        boolean newMember;
+        newMember = true;
 
-      String shortSummaryResult = String.format(shortSummary, age, yearOfBirth, phoneNumber);
+        char gender;
+        gender = 'F';
 
-      System.out.println(shortSummaryResult);
-      System.out.println(BodyTemperature);
-      System.out.println(height);
-      System.out.println(newMember);
-      System.out.println(gender);
+        String shortSummary = "My age is %d, I was born in %d and my phone number is %d.";
 
+        String shortSummaryResult = String.format(shortSummary, age, yearOfBirth, phoneNumber);
+
+        System.out.println(shortSummaryResult);
+        System.out.println(BodyTemperature);
+        System.out.println(height);
+        System.out.println(newMember);
+        System.out.println(gender);
+    }
+
+    public static void homework1Task3() {
         Scanner scannerData = new Scanner(System.in);
 
         String expectedCityName = "Minsk";
@@ -64,8 +78,6 @@ public class Main {
 
         boolean cityNameContains = userCity.contains("e");
 
-        String userFirstNameAndYob = String.format("Имя пользователя %s, год рождения %d.", firstName, yearOfBirth);
-
         String updatedDefaultCity = defaultCityName.replace('b', 'B');
 
         String loweCaseDefaultCityName = defaultCityName.toLowerCase();
@@ -89,6 +101,5 @@ public class Main {
 
         System.out.println(loweCaseDefaultCityName);
 
-        System.out.println(userFirstNameAndYob);
-        }
     }
+}
