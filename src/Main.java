@@ -2,11 +2,14 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-//        homework1Task1();
-//        homework1Task2();
-//        homework1Task3();
-//        homework2Task1();
+        myFirstProgram();
+        homework1Task1();
+        homework1Task2();
+        homework1Task3();
+        homework2Task1();
         homework2Task2();
+        homework2Task3();
+        homework2Task4();
 
     }
 
@@ -142,4 +145,57 @@ public class Main {
         while (!userInput.equals("Exit"));
         System.out.println("Bye!");
     }
+
+    public static void homework2Task3() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Please enter a number: ");
+        int x = scanner.nextInt();
+        int sum = 0;
+        if (x >= 0) {
+            for (int i = 0; i <= x; i++) {
+                sum += i;
+            }
+        } else {
+            for (int i = 0; i >= x; i--) {
+                sum += i;
+            }
+        }
+        System.out.printf("The sum of all numbers from 0 to %d is %d", x, sum);
+    }
+
+    public static void homework2Task4() {
+        class channel {
+            int id;
+            String name;
+
+            channel(int id, String text) {
+                this.id = id;
+                this.name = text;
+            }
+        }
+        channel[] channels = {
+                new channel(1, "Nature"),
+                new channel(2, "Culture"),
+                new channel(3, "History"),
+                new channel(4, "MTV")
+        };
+        Scanner scanner = new Scanner(System.in);
+        int selectedChannel;
+        while (true) {
+            System.out.println("Please enter channel N or 0 to exit.");
+            selectedChannel = scanner.nextInt();
+            if (selectedChannel == 0) {
+                System.out.println("Bye!");
+                break;
+            }
+            if (selectedChannel > channels.length || selectedChannel < 0) {
+                System.out.println("This channel does not exist, try again!");
+            } else {
+                System.out.println(channels[selectedChannel - 1].name);
+            }
+
+        }
+    }
 }
+
+
