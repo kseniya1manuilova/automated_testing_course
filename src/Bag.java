@@ -1,5 +1,5 @@
 public class Bag {
-//    String colour;
+    //    String colour;
     String material;
     Item content;
     Colour colour;
@@ -7,15 +7,13 @@ public class Bag {
     private double discount;
     private double price;
     boolean hasZipper;
-    final double DEFAULT_DISCOUNT = 0;
 
     public String getFullInfo() {
         String MaterialInfo = getMaterialInfo();
         return String.format("The bag contain: %s\nThe bag colour: %s\nThe bag discount is %s percent\n"
-                + "and the total price will be %s", content.itemName, colour.colourName, discount, finalPrice,
+                        + "and the total price will be %s", content.itemName, colour.colourName, discount, finalPrice,
                 MaterialInfo);
     }
-
 
     public String getMaterialInfo() {
         return String.format("\nThe bag is made of: %s\n", content.itemName);
