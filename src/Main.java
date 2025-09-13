@@ -2,37 +2,56 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        myFirstProgram();
+        homework1Task1();
+        homework1Task2();
+        homework1Task3();
+        homework2Task1();
+        homework2Task2();
+        homework2Task3();
+        homework2Task4();
 
-      String firstName = "Kseniya";
-      String lastName = "Manuilava";
-      String jobTitle = "QA engeneer";
+    }
 
-      System.out.println(firstName +" " + lastName + " works as a " + jobTitle + ".");
+    public static void myFirstProgram() {
+        System.out.println("Hello world!");
+    }
 
-      byte age = 31;
-      short yearOfBirth = 1994;
-      int phoneNumber = 291111111;
-      double BodyTemperature = 36.6;
+    public static void homework1Task1() {
+        String firstName = "Kseniya";
+        String lastName = "Manuilava";
+        String jobTitle = "QA engeneer";
 
-      float height;
-      height = 1.7F;
+        System.out.println(firstName + " " + lastName + " works as a " + jobTitle + ".");
+    }
 
-      boolean newMember;
-      newMember = true;
+    public static void homework1Task2() {
+        byte age = 31;
+        short yearOfBirth = 1994;
+        int phoneNumber = 291111111;
+        double BodyTemperature = 36.6;
 
-      char gender;
-      gender = 'F';
+        float height;
+        height = 1.7F;
 
-      String shortSummary = "My age is %d, I was born in %d and my phone number is %d.";
+        boolean newMember;
+        newMember = true;
 
-      String shortSummaryResult = String.format(shortSummary, age, yearOfBirth, phoneNumber);
+        char gender;
+        gender = 'F';
 
-      System.out.println(shortSummaryResult);
-      System.out.println(BodyTemperature);
-      System.out.println(height);
-      System.out.println(newMember);
-      System.out.println(gender);
+        String shortSummary = "My age is %d, I was born in %d and my phone number is %d.";
 
+        String shortSummaryResult = String.format(shortSummary, age, yearOfBirth, phoneNumber);
+
+        System.out.println(shortSummaryResult);
+        System.out.println(BodyTemperature);
+        System.out.println(height);
+        System.out.println(newMember);
+        System.out.println(gender);
+    }
+
+    public static void homework1Task3() {
         Scanner scannerData = new Scanner(System.in);
 
         String expectedCityName = "Minsk";
@@ -64,8 +83,6 @@ public class Main {
 
         boolean cityNameContains = userCity.contains("e");
 
-        String userFirstNameAndYob = String.format("Имя пользователя %s, год рождения %d.", firstName, yearOfBirth);
-
         String updatedDefaultCity = defaultCityName.replace('b', 'B');
 
         String loweCaseDefaultCityName = defaultCityName.toLowerCase();
@@ -89,6 +106,96 @@ public class Main {
 
         System.out.println(loweCaseDefaultCityName);
 
-        System.out.println(userFirstNameAndYob);
+    }
+
+
+    public static void homework2Task1() {
+        Scanner scanner = new Scanner(System.in);
+        int score;
+        while (true) {
+            System.out.println("Please enter your score: ");
+            score = scanner.nextInt();
+            if (score < 0 || score > 100) {
+                System.out.println("Incorrect value! Try again.");
+            } else break;
+        }
+        if (score >= 90) {
+            System.out.println("Your grade is A!");
+        } else if (score >= 80) {
+            System.out.println("Your grade is B!");
+        } else if (score >= 70) {
+            System.out.println("Your grade is C!");
+        } else if (score >= 60) {
+            System.out.println("Your grade is D!");
+        } else if (score >= 50) {
+            System.out.println("Your grade is E!");
+        } else if (score <= 49) {
+            System.out.println("Your grade is F!");
         }
     }
+
+    public static void homework2Task2() {
+        String userInput;
+        Scanner scanner = new Scanner(System.in);
+        do {
+            System.out.print("Please enter something: ");
+            userInput = scanner.nextLine();
+            System.out.println("You've entered: " + userInput);
+        }
+        while (!userInput.equals("Exit"));
+        System.out.println("Bye!");
+    }
+
+    public static void homework2Task3() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Please enter a number: ");
+        int x = scanner.nextInt();
+        int sum = 0;
+        if (x >= 0) {
+            for (int i = 0; i <= x; i++) {
+                sum += i;
+            }
+        } else {
+            for (int i = 0; i >= x; i--) {
+                sum += i;
+            }
+        }
+        System.out.printf("The sum of all numbers from 0 to %d is %d", x, sum);
+    }
+
+    public static void homework2Task4() {
+        class channel {
+            int id;
+            String name;
+
+            channel(int id, String text) {
+                this.id = id;
+                this.name = text;
+            }
+        }
+        channel[] channels = {
+                new channel(1, "Nature"),
+                new channel(2, "Culture"),
+                new channel(3, "History"),
+                new channel(4, "MTV")
+        };
+        Scanner scanner = new Scanner(System.in);
+        int selectedChannel;
+        while (true) {
+            System.out.println("Please enter channel N or 0 to exit.");
+            selectedChannel = scanner.nextInt();
+            if (selectedChannel == 0) {
+                System.out.println("Bye!");
+                break;
+            }
+            if (selectedChannel > channels.length || selectedChannel < 0) {
+                System.out.println("This channel does not exist, try again!");
+            } else {
+                System.out.println(channels[selectedChannel - 1].name);
+            }
+
+        }
+    }
+}
+
+
